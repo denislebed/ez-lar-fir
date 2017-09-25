@@ -40,13 +40,16 @@ Route::post('/task', function (Request $request) {
  * 
  */
 Route::delete('/task/{task}', function (Task $task) {
-   $task->delete();
+    $task->delete();
 
-  return redirect('/');
+    return redirect('/');
 });
-Route::get('task/edit/{task}',function (Task $task){
-   
-    var_dump($task);
-    
-    
+
+Route::get('edit/{task}', function (Task $task) {
+    $tasks = Task::orderBy('created_at', 'asc')->get();
+    $_POST = $task->name;
+    $task->delete();
+    return view('edit', [
+        'tasks' => $task
+    ]);
 });

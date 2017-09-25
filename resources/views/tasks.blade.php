@@ -71,7 +71,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="{{ url('task/edit/'.$task->id) }}" class="btn btn-warning">
+                        <a href="{{ url('edit/'.$task->id) }}" class="btn btn-warning">
                             <i class="fa fa-trash"></i> Редактировать
                         </a>
                     </td>
